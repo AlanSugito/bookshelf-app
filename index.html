@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookshelf App</title>
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+    <div class="modal">
+        <h3>Buku telah di hapus</h3>
+        <button class="close-button">Tutup</button>
+    </div>
+    <div class="app">
+        <img src="images/vector/Circle.svg" alt="circle" class="circle">
+        <img src="images/vector/Blob.svg" alt="blob" class="blob">
+        <header>
+        <img src="images/vector/book.svg" alt="book" class="icon">
+        <h1>Book <span>Shelf</span></h1>
+    </header>
+    <form>
+        <div class="form-input">
+            <div class="input">
+                <img src="images/vector/Title icon.svg" alt="title" class="icon">
+                 <label for="title">Title
+                     <input type="text" id="title" name="title" required>
+                 </label>   
+            </div>
+        <div class="form-input">
+            <div class="input">
+                <img src="images/vector/Author icon.svg" alt="title" class="icon">
+                <label for="author">Author
+                    <input type="text" id="author" name="author" required>
+                </label> 
+                
+            </div>
+        <div class="form-input">
+            <div class="input">
+                <img src="images/vector/Date icon.svg" alt="title" class="icon">
+                <label for="year">
+                    <span>Year</span> 
+                    <input type="number" id="year" name="year" required>
+                </label> 
+            </div>
+        </div>
+        <input type="submit" value="Add" class="add-button">
+    </form>
+    <div class="shelfs">
+        <div class="shelf read">
+            <h2>Read list</h2>
+        </div>
+        <div class="shelf completed">
+            <h2>Completed</h2>
+        </div>
+    </div>
+    </div>
+    <script src="src/data.js"></script>
+    <script src="src/script.js"></script>
+    <script src="src/index.js"></script>
+</body>
+</html>
