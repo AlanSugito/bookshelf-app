@@ -83,13 +83,14 @@ function createUndoButton() {
 
 function addBookCompleted(book) {
   const completed = document.querySelector(".completed");
-  const title = document.querySelector(".book h2").innerText;
-  const author = document.querySelector(".detail p.author").innerText;
-  const year = document.querySelector(".detail p.year").innerText;
+  const title = book.querySelector(".book h2").innerText;
+  const author = book.querySelector(".detail p.author").innerText;
+  const year = book.querySelector(".detail p.year").innerText;
   const completedBook = createBook(title, author, year, true);
   const selectedBook = books.find((b) => b.id == book.id);
   completedBook.id = selectedBook.id;
   selectedBook.isCompleted = true;
+  completedBook.classList.add("putted");
   completed.append(completedBook);
   book.remove();
   addDataTostorage();
@@ -107,11 +108,12 @@ function undoBook(book) {
   const previousShelf = document.querySelector(".read");
   const title = book.querySelector(".book h2").innerText;
   const author = book.querySelector(".detail p.author").innerText;
-  const year = document.querySelector(".detail p.year").innerText;
+  const year = book.querySelector(".detail p.year").innerText;
   const completedBook = createBook(title, author, year, false);
   const selectedBook = books.find((b) => b.id == book.id);
   completedBook.id = selectedBook.id;
   selectedBook.isCompleted = false;
+  completedBook.classList.add("putted");
   previousShelf.append(completedBook);
   book.remove();
   addDataTostorage();
