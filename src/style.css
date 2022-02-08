@@ -5,6 +5,13 @@
     font-style: normal;
 
 }
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/poppins-regular-webfont.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+
+}
 
 *{
     margin: 0;
@@ -36,7 +43,7 @@ header{
 }
 header h1 > span {
     color: #fff;
-    -webkit-text-stroke-width: .1px;
+    -webkit-text-stroke-width: .5px;
     -webkit-text-stroke-color: black;
     
 }
@@ -55,6 +62,9 @@ form .form-input .input input{
     transition: .3s;
     font-size: 1em;
     font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+form .form-input .input label{
+    color: #1C69FF;
 }
 form .form-input .input input:focus{
     border-color: #003cb4;
@@ -125,11 +135,41 @@ form .form-input{
 .shelfs .shelf::-webkit-scrollbar{
     visibility: hidden;
 }
-.shelfs .shelf > h2{
+.shelfs .shelf .shelf-head > h2{
     border-bottom: 2px solid white;
 }
 .shelfs .shelf p{
     width: 50%;
+}
+.shelf .shelf-head{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.search-button{
+    display: flex;
+    align-items: center;
+}
+.search-book{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 2px solid white;
+    font-family: "Poppins";
+    transition: .5s;
+    color: white;
+    visibility: visible;
+    height: 35px;
+    margin-left: 10px;
+    transition: .5s;
+}
+.search-book::placeholder{
+    color: rgba(255,255,255, 0.8);
+}
+.search{
+    cursor: pointer;
+    transition: .5s;
 }
 .book{
     width: 100%;
@@ -149,6 +189,7 @@ form .form-input{
 }
 .detail > p{
     margin-right: 20px;
+    font-size: .8rem;
 }
 .button-container{
     display: flex;
@@ -161,6 +202,7 @@ form .form-input{
 }
 .year{
     color: #E27918;
+    
 }
 .button-container > img{
     cursor: pointer;
@@ -236,7 +278,9 @@ form .form-input{
     margin-top: 20px;
     cursor: pointer;
 }
-
+.hide{
+    display: none;
+}
 @keyframes slide-in {
     from{
         opacity: 0;
@@ -255,6 +299,11 @@ form .form-input{
         transform: translateY(-20px);
     }
 }
+@keyframes fade{
+    from{
+        opacity: 0;
+    }
+}
 @media (max-width: 600px){
     .circle{
         width: 50%;
@@ -269,6 +318,9 @@ form .form-input{
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         place-items: center;
     }
+    .shelf{
+        align-items: center;
+    }
     form{
         padding: 20px;
         align-items: center;
@@ -278,10 +330,6 @@ form .form-input{
     }
     form .add-button{
         margin-left: 0;
-    }
-    .book{
-        width: 350px;
-        margin-right: 80px;
     }
     .button-container{
         flex-direction: column;
