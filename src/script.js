@@ -63,19 +63,19 @@ function createButton(src, event) {
 }
 
 function createCompleteButton() {
-  const src = "/images/vector/Ellipse-1.svg";
+  const src = "images/vector/Ellipse-1.svg";
   return createButton(src, (e) => {
     addBookCompleted(e.target.parentElement.parentElement.parentElement);
   });
 }
 function createTrashButton() {
-  const src = "/images/vector/Ellipse-3.svg";
+  const src = "images/vector/Ellipse-3.svg";
   return createButton(src, (e) => {
     removeBook(e.target.parentElement.parentElement.parentElement);
   });
 }
 function createUndoButton() {
-  const src = "/images/vector/Ellipse-2.svg";
+  const src = "images/vector/Ellipse-2.svg";
   return createButton(src, (e) => {
     undoBook(e.target.parentElement.parentElement.parentElement);
   });
